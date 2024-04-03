@@ -18,5 +18,15 @@ public class Money {
 	public Money add(Money m) {
 	return new Money(amount() + m.amount(), currency());
 	}
-	
+	 @Override
+	    public boolean equals(Object money) {
+	        if (this == money) {
+	            return true;
+	        }
+	        if (money == null || getClass() != money.getClass()) {
+	            return false;
+	        }
+	        Money money1 = (Money) money;
+	        return fAmount == money1.fAmount && Objects.equals(fCurrency, money1.fCurrency);
+	    }
 	}
