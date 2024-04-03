@@ -4,23 +4,28 @@ import static org.junit.Assert.*;
 
 import java.util.Objects;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class Moneytest {
 
+	Money m12CHF;
+	Money m14CHF;
 	
+	 @Before
+	 public void unitmoney() {
+		  m12CHF = new Money(12, "CHF"); // création de données
+		  m14CHF = new Money(14, "CHF");
+	 }
 	@Test
 	public void testSimpleAdd() {
-	Money m12CHF = new Money(12, "CHF"); // création de données
-	Money m14CHF = new Money(14, "CHF");
+	
 	Money expected = new Money(26, "CHF");
 	Money result = m12CHF.add(m14CHF); // exécution de la méthode testée
 	assertTrue(expected.equals(result)); // comparaison
 	}
 	@Test
 	public void testEquals() {
-	Money m12CHF= new Money(12, "CHF");
-	Money m14CHF= new Money(14, "CHF");
 	assertTrue(!m12CHF.equals(null)); 
 	assertEquals(m12CHF, m12CHF);
 	assertEquals(m12CHF, new Money(12, "CHF"));
