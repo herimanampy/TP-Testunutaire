@@ -10,7 +10,7 @@ public class MoneyBagTest {
 	Money f12CHF;
 	Money f7USD;
 	Money f21USD;
-	MoneyBag fMB1;
+	MoneyBag fMB1;   
 	MoneyBag fMB2;
 	@Test
 	public void test() {
